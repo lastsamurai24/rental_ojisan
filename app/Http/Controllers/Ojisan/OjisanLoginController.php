@@ -22,7 +22,7 @@ class OjisanLoginController extends Controller
         $credentials = $request->only(['email', 'password']);
 
         if (Auth::guard('ojisan')->attempt($credentials)) {
-            return redirect()->route('ojisan.dashboard')->with([
+            return redirect()->route('dashboard')->with([
                 'login_msg' => 'ログインしました。',
             ]);
         }

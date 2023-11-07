@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
+Route::get('dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -45,8 +45,8 @@ Route::group(['prefix' => 'ojisan'], function () {
     // 以下の中は認証必須のエンドポイントとなる
     Route::middleware(['auth:ojisan'])->group(function () {
         // ダッシュボード
-        Route::get('dashboard', fn() => view('ojisan.dashboard'))
-            ->name('ojisan.dashboard');
+        Route::get('dashboard', fn() => view('dashboard'))
+            ->name('dashboard');
     });
 });
 require __DIR__.'/auth.php';

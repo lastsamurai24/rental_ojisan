@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('age');
+            $table->integer('age')->nullable(); 
             $table->text('bio')->nullable();
             $table->string('photo')->nullable();
-            $table->decimal('hourly_rate', 8, 2);
+             $table->decimal('hourly_rate', 8, 2)->default(0.00); // 0.00や他の適切なデフォルト値を設定
             $table->string('availability')->nullable();
             $table->rememberToken();
             $table->timestamps();

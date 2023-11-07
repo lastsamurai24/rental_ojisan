@@ -16,7 +16,11 @@ return [
     'defaults' => [
         'guard' => 'web',
         'passwords' => 'users',
+        'ojisan' => [
+        'driver' => 'session',
+        'provider' => 'ojisans',
     ],
+    ],  
 
     /*
     |--------------------------------------------------------------------------
@@ -40,10 +44,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'ojisans' => [
-            'driver' => 'session',
-            'provider' => 'ojisans',
-        ],
+        'ojisan' => [
+        'driver' => 'session',
+        'provider' => 'ojisans',
+    ],
     ],
 
     /*
@@ -67,13 +71,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
-            'aojisanss' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Ojisan::class,
         ],
-
-        ],
-
+        'ojisans' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Ojisan::class,
+    ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
