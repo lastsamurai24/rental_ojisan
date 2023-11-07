@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'ojisans' => [
+            'driver' => 'session',
+            'provider' => 'ojisans',
+        ],
     ],
 
     /*
@@ -63,6 +67,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+            'aojisanss' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Ojisan::class,
+        ],
+
         ],
 
         // 'users' => [
